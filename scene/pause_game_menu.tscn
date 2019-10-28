@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprite/icon.png" type="Texture" id=2]
+
+[node name="pause_menu" type="Node2D"]
+position = Vector2( 0, -7 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 292.0
+margin_top = 146.0
+margin_right = 739.0
+margin_bottom = 539.0
+color = Color( 0, 0, 0, 0.407843 )
+
+[node name="continue" parent="." instance=ExtResource( 1 )]
+margin_left = 383.25
+margin_top = 280.334
+margin_right = 650.25
+margin_bottom = 329.334
+text = "Continue"
+
+[node name="save" parent="." instance=ExtResource( 1 )]
+margin_left = 383.25
+margin_top = 346.334
+margin_right = 650.25
+margin_bottom = 395.334
+text = "Save Game"
+
+[node name="exit" parent="." instance=ExtResource( 1 )]
+margin_left = 383.25
+margin_top = 412.334
+margin_right = 650.25
+margin_bottom = 461.334
+text = "Exit"
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 515.5, 223.5 )
+texture = ExtResource( 2 )

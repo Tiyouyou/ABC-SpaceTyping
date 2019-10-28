@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/lettre.gd" type="Script" id=1]
+[ext_resource path="res://sprite/lettre/[.png" type="Texture" id=2]
+[ext_resource path="res://font/CutiveMono.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.3559, 32.4669 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 3 )
+
+[node name="[" type="Area2D" groups=[
+"lettre",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="[" type="Sprite" parent="." groups=[
+"A",
+]]
+modulate = Color( 0.929412, 0.0823529, 0.580392, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -24.0272
+margin_top = -45.0727
+margin_right = 23.9728
+margin_bottom = 43.9273
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "A"
+[connection signal="area_entered" from="." to="." method="_on_lettre_area_entered"]

@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Load_game.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://font/CutiveMono.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = SubResource( 1 )
+
+[node name="save_mode" type="Node2D" groups=[
+"load",
+]]
+script = ExtResource( 1 )
+
+[node name="load_theme" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="load_theme"]
+margin_left = 164.052
+margin_top = 95.2079
+margin_right = 887.052
+margin_bottom = 566.208
+color = Color( 0.0352941, 0.00392157, 1, 0.192157 )
+
+[node name="ColorRect2" type="ColorRect" parent="load_theme"]
+margin_left = 167.052
+margin_top = 96.9358
+margin_right = 884.052
+margin_bottom = 561.936
+color = Color( 0, 0, 0, 0.596078 )
+
+[node name="save" type="ColorRect" parent="load_theme"]
+editor/display_folded = true
+margin_left = 176.0
+margin_top = 165.0
+margin_right = 875.0
+margin_bottom = 291.0
+color = Color( 0, 0, 0, 0.596078 )
+
+[node name="data" type="Label" parent="load_theme/save"]
+margin_left = 101.0
+margin_top = 53.0
+margin_right = 257.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NO data saved"
+
+[node name="data2" type="Label" parent="load_theme/save"]
+margin_left = 37.0
+margin_top = 53.0
+margin_right = 52.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+
+[node name="load_data" type="Button" parent="load_theme/save"]
+margin_left = 571.552
+margin_top = 50.9926
+margin_right = 612.552
+margin_bottom = 70.9926
+disabled = true
+text = "load"
+
+[node name="save2" type="ColorRect" parent="load_theme"]
+margin_left = 176.0
+margin_top = 297.0
+margin_right = 875.0
+margin_bottom = 423.0
+color = Color( 0, 0, 0, 0.596078 )
+
+[node name="data" type="Label" parent="load_theme/save2"]
+margin_left = 101.0
+margin_top = 53.0
+margin_right = 257.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NO data saved"
+
+[node name="data2" type="Label" parent="load_theme/save2"]
+margin_left = 37.0
+margin_top = 53.0
+margin_right = 52.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "2"
+
+[node name="load_data2" type="Button" parent="load_theme/save2"]
+margin_left = 571.552
+margin_top = 50.9926
+margin_right = 612.552
+margin_bottom = 70.9926
+disabled = true
+text = "load"
+
+[node name="save3" type="ColorRect" parent="load_theme"]
+margin_left = 176.0
+margin_top = 429.0
+margin_right = 875.0
+margin_bottom = 555.0
+color = Color( 0, 0, 0, 0.596078 )
+
+[node name="data" type="Label" parent="load_theme/save3"]
+margin_left = 101.0
+margin_top = 53.0
+margin_right = 257.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NO data saved"
+
+[node name="data2" type="Label" parent="load_theme/save3"]
+margin_left = 37.0
+margin_top = 53.0
+margin_right = 52.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "3"
+
+[node name="load_data3" type="Button" parent="load_theme/save3"]
+margin_left = 571.552
+margin_top = 50.9926
+margin_right = 612.552
+margin_bottom = 70.9926
+disabled = true
+text = "load"
+
+[node name="Label" type="Label" parent="load_theme"]
+margin_left = 307.009
+margin_top = 88.699
+margin_right = 856.009
+margin_bottom = 199.699
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
+text = "LOAD GAME"
+
+[node name="close_button" type="Button" parent="load_theme"]
+margin_left = 841.492
+margin_top = 120.066
+margin_right = 861.492
+margin_bottom = 140.066
+text = "X"
+flat = true
+[connection signal="focus_entered" from="load_theme/save/load_data" to="." method="_on_load_data_focus_entered"]
+[connection signal="focus_entered" from="load_theme/save2/load_data2" to="." method="_on_load_data2_focus_entered"]
+[connection signal="focus_entered" from="load_theme/save3/load_data3" to="." method="_on_load_data3_focus_entered"]
+[connection signal="focus_entered" from="load_theme/close_button" to="." method="_on_close_button_focus_entered"]

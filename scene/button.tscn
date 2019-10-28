@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://style_button_menu/menu2.tres" type="StyleBox" id=1]
+[ext_resource path="res://style_button_menu/menu.tres" type="StyleBox" id=2]
+[ext_resource path="res://font/CutiveMono.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0156863, 0.156863, 0.537255, 0.862745 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.34902 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 5
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+font_data = ExtResource( 3 )
+
+[node name="Load_game" type="Button"]
+margin_left = 381.0
+margin_top = 487.834
+margin_right = 648.0
+margin_bottom = 536.834
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.215686, 0.403922, 0.741176, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Load Game"

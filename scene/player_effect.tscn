@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprite/effect/ef1.png" type="Texture" id=1]
+[ext_resource path="res://sprite/effect/ef2.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="player_effect" type="AnimatedSprite"]
+position = Vector2( -51.2204, -9.52515 )
+rotation = 3.14159
+scale = Vector2( 0.721761, 0.490189 )
+frames = SubResource( 1 )
+playing = true

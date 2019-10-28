@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/levels25.gd" type="Script" id=1]
+[ext_resource path="res://scene/levels/level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprite/level/level3.png" type="Texture" id=3]
+
+[node name="levels25" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="level" parent="." instance=ExtResource( 2 )]
+
+[node name="bacground" parent="level" index="0"]
+modulate = Color( 0.34902, 0.615686, 0.054902, 1 )
+texture = ExtResource( 3 )
+
+[node name="bacground2" parent="level" index="1"]
+modulate = Color( 0.34902, 0.615686, 0.054902, 1 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[editable path="level"]

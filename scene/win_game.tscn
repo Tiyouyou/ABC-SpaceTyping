@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/game_over.gd" type="Script" id=1]
+[ext_resource path="res://sprite/win.png" type="Texture" id=2]
+[ext_resource path="res://son/game_over.wav" type="AudioStream" id=3]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, 20, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.556863, 0.533333, 0.533333, 1 )
+
+[node name="win_game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 657.0
+color = Color( 0, 0, 0, 0.407843 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 300.0
+margin_top = 247.0
+margin_right = 702.0
+margin_bottom = 475.0
+texture = ExtResource( 2 )
+
+[node name="son" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 509.892, 357.33 )
+scale = Vector2( 2, 1 )
+emitting = false
+amount = 65
+one_shot = true
+process_material = SubResource( 1 )

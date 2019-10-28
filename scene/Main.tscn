@@ -1,0 +1,198 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://script/Main.gd" type="Script" id=1]
+[ext_resource path="res://son/lazer.wav" type="AudioStream" id=2]
+[ext_resource path="res://son/theme_music.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sprite/level/UI.png" type="Texture" id=4]
+[ext_resource path="res://scene/life.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font/CutiveMono.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/game_over.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/win_game.tscn" type="PackedScene" id=9]
+[ext_resource path="res://son/win.wav" type="AudioStream" id=10]
+[ext_resource path="res://scene/levels_controler.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/new_game_instruction.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scene/pause_game_menu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scene/save_mode.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sprite/level/pname.png" type="Texture" id=15]
+[ext_resource path="res://scene/best_score.tscn" type="PackedScene" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.71875, 301.277 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1.6803, 302.078 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 6 )
+
+[node name="Main" type="Node2D" groups=[
+"save",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lazer_son" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -15.0
+
+[node name="theme_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.129412, 0.278431, 0.686275, 0.862745 )
+anchor_right = 1.0
+margin_top = 486.0
+margin_right = 1024.0
+margin_bottom = 636.0
+texture = ExtResource( 4 )
+
+[node name="life" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.482353, 0.588235, 0.870588, 1 )
+position = Vector2( 115.77, 549.541 )
+scale = Vector2( 0.9, 0.817 )
+frame = 4
+
+[node name="score" type="Label" parent="."]
+margin_left = 790.87
+margin_top = 534.863
+margin_right = 898.87
+margin_bottom = 568.863
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.384314, 0.788235, 0.0470588, 1 )
+text = "score:"
+
+[node name="score_compteur" type="Label" parent="."]
+margin_left = 898.788
+margin_top = 537.878
+margin_right = 971.788
+margin_bottom = 571.878
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.384314, 0.788235, 0.0470588, 1 )
+
+[node name="playgame" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = -1
+
+[node name="player" parent="playgame" instance=ExtResource( 7 )]
+position = Vector2( 98.0827, 309.053 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="bar" type="Area2D" parent="playgame"]
+position = Vector2( 1024, 300 )
+
+[node name="col1" type="CollisionShape2D" parent="playgame/bar"]
+shape = SubResource( 2 )
+
+[node name="bar2" type="Area2D" parent="playgame"]
+position = Vector2( 115, 300 )
+
+[node name="col2" type="CollisionShape2D" parent="playgame/bar2"]
+position = Vector2( -10.219, 0.301178 )
+shape = SubResource( 3 )
+
+[node name="game_over" parent="." instance=ExtResource( 8 )]
+editor/display_folded = true
+visible = false
+script = null
+
+[node name="Button" parent="game_over" index="2"]
+text = "Try Again"
+
+[node name="win_game" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
+visible = false
+
+[node name="son" parent="win_game" index="2"]
+stream = ExtResource( 10 )
+
+[node name="levels_controler" parent="." instance=ExtResource( 11 )]
+
+[node name="Timer" type="Timer" parent="levels_controler"]
+wait_time = 2.0
+one_shot = true
+
+[node name="new_game_instruction" parent="levels_controler" instance=ExtResource( 12 )]
+editor/display_folded = true
+visible = false
+position = Vector2( 5.03503, -55.3856 )
+
+[node name="load_theme" parent="levels_controler/new_game_instruction" index="1"]
+editor/display_folded = true
+
+[node name="pause_game" parent="." instance=ExtResource( 13 )]
+editor/display_folded = true
+visible = false
+
+[node name="save_mode" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+visible = false
+position = Vector2( 11.688, -38.9603 )
+
+[node name="save" parent="save_mode" index="2"]
+editor/display_folded = true
+
+[node name="player_name" type="Sprite" parent="."]
+modulate = Color( 0.129412, 0.278431, 0.686275, 0.862745 )
+position = Vector2( 512.851, 18 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 458.0
+margin_top = 10.0
+margin_right = 570.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.384314, 0.788235, 0.0470588, 1 )
+align = 1
+uppercase = true
+
+[node name="best_score" parent="." instance=ExtResource( 16 )]
+editor/display_folded = true
+visible = false
+[connection signal="playnext" from="." to="levels_controler" method="_on_Main_playnext"]
+[connection signal="retry" from="." to="levels_controler" method="_on_Main_retry"]
+[connection signal="retry" from="." to="." method="_on_Main_retry"]
+[connection signal="area_entered" from="playgame/player" to="." method="_on_player_area_entered"]
+[connection signal="area_entered" from="playgame/bar" to="." method="_on_bar_area_entered"]
+[connection signal="area_entered" from="playgame/bar2" to="." method="_on_bar2_area_entered"]
+[connection signal="focus_entered" from="game_over/Button" to="." method="_on_Button_focus_entered"]
+[connection signal="end" from="levels_controler" to="." method="_on_levels_controler_end"]
+[connection signal="timeout" from="levels_controler/Timer" to="levels_controler" method="_on_Timer_timeout"]
+[connection signal="timeout" from="levels_controler/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="startgame" from="levels_controler/new_game_instruction" to="levels_controler" method="_on_new_game_instruction_startgame"]
+[connection signal="focus_entered" from="levels_controler/new_game_instruction/load_theme/Start" to="." method="_on_Start_focus_entered"]
+[connection signal="focus_entered" from="pause_game/continue" to="." method="_on_continue_focus_entered"]
+[connection signal="focus_entered" from="pause_game/save" to="." method="_on_save_focus_entered"]
+[connection signal="focus_entered" from="pause_game/exit" to="." method="_on_exit_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save/save_data" to="." method="_on_save_data_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save/load_data" to="levels_controler" method="_on_load_data_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save/load_data" to="." method="_on_load_data_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save2/save_data2" to="." method="_on_save_data2_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save2/load_data2" to="levels_controler" method="_on_load_data2_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save2/load_data2" to="." method="_on_load_data2_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save3/save_data3" to="." method="_on_save_data3_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save3/load_data3" to="levels_controler" method="_on_load_data3_focus_entered"]
+[connection signal="focus_entered" from="save_mode/save3/load_data3" to="." method="_on_load_data3_focus_entered"]
+[connection signal="focus_entered" from="save_mode/close_button" to="." method="_on_close_button_focus_entered"]
+[connection signal="animation_finished" from="best_score/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="game_over"]
+
+[editable path="win_game"]
+
+[editable path="levels_controler/new_game_instruction"]
+
+[editable path="pause_game"]
+
+[editable path="save_mode"]
+
+[editable path="best_score"]
