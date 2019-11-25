@@ -27,10 +27,10 @@ var lettre_name = Array() #letter array of name
 signal playnext #next level signal
 signal retry	#retry game signal (game over)
 var player_name=""
-var best_score=10
+var best_score
 var best_score_temp=0
 var end_animation=0
-const SAVE_PATH_BEST_SCORE="res://save_game/best_score.json"
+const SAVE_PATH_BEST_SCORE="res://best_score.json"
 func _ready():
 	$playgame.get_tree().paused=false
 	$levels_controler/new_game_instruction.show()
@@ -39,7 +39,13 @@ func _ready():
 	$score_compteur.text=String(score)
 	min_distance=$playgame/bar.position.x -$playgame/bar2.position.x
 	#verif best score
-	_best_score_loader()
+	var load_score=File.new()
+	if load_score.file_exists(SAVE_PATH_BEST_SCORE) :
+		var load_bscrore=save.load_best_score()
+		for node_path in load_bscrore.keys():
+			
+			best_score=load_bscrore["best"]["Best_SCORE"]
+			best_score_temp=best_score
 	pass
 	
 	
@@ -358,21 +364,26 @@ func _on_close_button_focus_entered():
 func _on_save_data_focus_entered():
 	save.save_game(1)
 	$save_mode/save/data.text="Nom: "+player_name+" Level: "+String($levels_controler.level)+" Score: "+String(score)+" Life: "+String($life.frame)
-	$save_mode/save/load_data.disabled=false
-
+	#$save_mode/save/load_data.disabled=false
+	if best_score>best_score_temp:
+		save.save_best_score_game()
 	pass # save game data.
 	
 func _on_save_data2_focus_entered():
 	save.save_game(2)
 	$save_mode/save2/data.text="Nom: "+player_name+" Level: "+String($levels_controler.level)+" Score: "+String(score)+" Life: "+String($life.frame)
-	$save_mode/save2/load_data2.disabled=false
+	#$save_mode/save2/load_data2.disabled=false
+	if best_score>best_score_temp:
+		save.save_best_score_game()
 	pass # save game data.
 
 
 func _on_save_data3_focus_entered():
 	save.save_game(3)
 	$save_mode/save3/data.text="Nom: "+player_name+" Level: "+String($levels_controler.level)+" Score: "+String(score)+" Life: "+String($life.frame)
-	$save_mode/save3/load_data3.disabled=false
+	#$save_mode/save3/load_data3.disabled=false
+	if best_score>best_score_temp:
+		save.save_best_score_game()
 	pass # save game data.
 
 func _on_load_data_focus_entered():

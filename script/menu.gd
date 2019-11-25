@@ -17,10 +17,10 @@
 #menu Script
 extends Node2D
 #savegame_files_path
-const SAVE_PATH="res://save_game/save.json"
-const SAVE_PATH2="res://save_game/save2.json"
-const SAVE_PATH3="res://save_game/save3.json"
-const SAVE_PATH_BEST_SCORE="res://save_game/best_score.json"
+const SAVE_PATH="res://save.json"
+const SAVE_PATH2="res://save2.json"
+const SAVE_PATH3="res://save3.json"
+const SAVE_PATH_BEST_SCORE="res://best_score.json"
 var vn=1
 func _ready():
 	#verification file to active load button
@@ -57,17 +57,10 @@ func _on_load_data3_focus_entered():
 
 
 func _on_TextureButton_pressed():
-	$menu_deco/ColorRect.show()
-	$menu_deco/volumeb1.hide()
-	$menu_deco/volumeb2.show()
+	
 	pass # volume button icon
 
 
-func _on_volumeb2_pressed():
-	$menu_deco/ColorRect.hide()
-	$menu_deco/volumeb2.hide()
-	$menu_deco/volumeb1.show()
-	pass # volume button icon
 
 
 func _on_exit_focus_entered():
@@ -84,3 +77,17 @@ func _on_new_game_focus_entered():
 	get_tree().change_scene("res://scene/Main.tscn")
 		
 	pass #new game button 
+
+
+func _on_volumeb1_focus_entered():
+	$menu_deco/ColorRect.show()
+	$menu_deco/volumeb1.hide()
+	$menu_deco/volumeb2.show()
+	pass # Replace with function body.
+
+
+func _on_volumeb2_focus_entered():
+	$menu_deco/ColorRect.hide()
+	$menu_deco/volumeb2.hide()
+	$menu_deco/volumeb1.show()
+	pass # Replace with function body.

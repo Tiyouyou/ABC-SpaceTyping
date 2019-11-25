@@ -17,10 +17,10 @@
 #save game Script 
 extends Node
 #savegame_files_path
-const SAVE_PATH="res://save_game/save.json"
-const SAVE_PATH2="res://save_game/save2.json"
-const SAVE_PATH3="res://save_game/save3.json"
-const SAVE_PATH_BEST_SCORE="res://save_game/best_score.json"
+const SAVE_PATH="res://save.json"
+const SAVE_PATH2="res://save2.json"
+const SAVE_PATH3="res://save3.json"
+const SAVE_PATH_BEST_SCORE="res://best_score.json"
 var _setting={}
 func _ready():
 	pass # Replace with function body.

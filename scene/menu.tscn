@@ -178,15 +178,17 @@ align = 1
 
 [node name="son" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+autoplay = true
 
 [node name="save_mode" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
 visible = false
 [connection signal="focus_entered" from="menu_deco/new_game" to="." method="_on_new_game_focus_entered"]
 [connection signal="focus_entered" from="menu_deco/Load_game" to="." method="_on_Load_game_focus_entered"]
 [connection signal="focus_entered" from="menu_deco/exit" to="." method="_on_exit_focus_entered"]
 [connection signal="value_changed" from="menu_deco/ColorRect/volume_controle" to="menu_deco/ColorRect/volume_controle" method="_on_volume_controle_value_changed"]
-[connection signal="pressed" from="menu_deco/volumeb1" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="menu_deco/volumeb2" to="." method="_on_volumeb2_pressed"]
+[connection signal="focus_entered" from="menu_deco/volumeb1" to="." method="_on_volumeb1_focus_entered"]
+[connection signal="focus_entered" from="menu_deco/volumeb2" to="." method="_on_volumeb2_focus_entered"]
 [connection signal="focus_entered" from="save_mode/load_theme/save/load_data" to="." method="_on_load_data_focus_entered"]
 [connection signal="focus_entered" from="save_mode/load_theme/save2/load_data2" to="." method="_on_load_data2_focus_entered"]
 [connection signal="focus_entered" from="save_mode/load_theme/save3/load_data3" to="." method="_on_load_data3_focus_entered"]

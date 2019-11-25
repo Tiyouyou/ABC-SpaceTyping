@@ -16,9 +16,9 @@
 #Autor: Michel Pierre
 #save mode Script 
 extends Node2D
-const SAVE_PATH="res://save_game/save.json"
-const SAVE_PATH2="res://save_game/save2.json"
-const SAVE_PATH3="res://save_game/save3.json"
+const SAVE_PATH="res://save.json"
+const SAVE_PATH2="res://save2.json"
+const SAVE_PATH3="res://save3.json"
 func _ready():
 	# active load game if files exist
 	var save_file= File.new()
@@ -31,7 +31,7 @@ func _ready():
 			for attribute in load_game["1"]:
 				if attribute =="player_data":
 					$save/data.text="Nom:"+load_game["1"]["player_data"]["player_name"]+"  Level:"+String(load_game["1"]["player_data"]["player_level"])+ "  Score:"+String(load_game["1"]["player_data"]["player_score"])+"  Life:"+String(load_game["1"]["player_data"]["player_life"])
-					$save/load_data.disabled=false
+					#$save/load_data.disabled=false
 					
 	if save_file.file_exists(SAVE_PATH2):
 		save_file.open(SAVE_PATH2,File.READ)
@@ -42,7 +42,7 @@ func _ready():
 			for attribute in load_game["2"]:
 				if attribute =="player_data":
 					$save2/data.text="Nom:"+load_game["2"]["player_data"]["player_name"]+"  Level:"+String(load_game["2"]["player_data"]["player_level"])+ "  Score:"+String(load_game["2"]["player_data"]["player_score"])+"  Life:"+String(load_game["2"]["player_data"]["player_life"])
-					$save2/load_data2.disabled=false
+					#$save2/load_data2.disabled=false
 					
 	if save_file.file_exists(SAVE_PATH3):
 		save_file.open(SAVE_PATH3,File.READ)
@@ -53,7 +53,7 @@ func _ready():
 			for attribute in load_game["3"]:
 				if attribute =="player_data":
 					$save3/data.text="Nom:"+load_game["3"]["player_data"]["player_name"]+"  Level:"+String(load_game["3"]["player_data"]["player_level"])+ "  Score:"+String(load_game["3"]["player_data"]["player_score"])+"  Life:"+String(load_game["3"]["player_data"]["player_life"])
-					$save3/load_data3.disabled=false
+					#$save3/load_data3.disabled=false
 	pass
 
 

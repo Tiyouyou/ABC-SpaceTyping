@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ABC SpaceTyping"
+run/main_scene="res://scene/menu.tscn"
 config/icon="res://sprite/icon.png"
 
 [autoload]

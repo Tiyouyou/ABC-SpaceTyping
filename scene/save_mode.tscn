@@ -2,16 +2,16 @@
 
 [ext_resource path="res://script/save_mode.gd" type="Script" id=1]
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://font/CutiveMono.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 80
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
 
 [node name="save_mode" type="Node2D"]
 script = ExtResource( 1 )
@@ -42,7 +42,7 @@ margin_left = 101.0
 margin_top = 53.0
 margin_right = 257.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "NO data saved"
 
@@ -51,7 +51,7 @@ margin_left = 37.0
 margin_top = 53.0
 margin_right = 52.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "1"
 
@@ -62,14 +62,6 @@ margin_right = 662.552
 margin_bottom = 70.9926
 toggle_mode = true
 text = "save"
-
-[node name="load_data" type="Button" parent="save"]
-margin_left = 571.552
-margin_top = 50.9926
-margin_right = 612.552
-margin_bottom = 70.9926
-disabled = true
-text = "load"
 
 [node name="save2" type="ColorRect" parent="."]
 margin_left = 176.0
@@ -83,7 +75,7 @@ margin_left = 101.0
 margin_top = 53.0
 margin_right = 257.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "NO data saved"
 
@@ -92,7 +84,7 @@ margin_left = 37.0
 margin_top = 53.0
 margin_right = 52.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "2"
 
@@ -102,14 +94,6 @@ margin_top = 50.9926
 margin_right = 662.552
 margin_bottom = 70.9926
 text = "save"
-
-[node name="load_data2" type="Button" parent="save2"]
-margin_left = 571.552
-margin_top = 50.9926
-margin_right = 612.552
-margin_bottom = 70.9926
-disabled = true
-text = "load"
 
 [node name="save3" type="ColorRect" parent="."]
 margin_left = 176.0
@@ -123,7 +107,7 @@ margin_left = 101.0
 margin_top = 53.0
 margin_right = 257.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "NO data saved"
 
@@ -132,7 +116,7 @@ margin_left = 37.0
 margin_top = 53.0
 margin_right = 52.0
 margin_bottom = 76.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "3"
 
@@ -143,20 +127,12 @@ margin_right = 662.552
 margin_bottom = 70.9926
 text = "save"
 
-[node name="load_data3" type="Button" parent="save3"]
-margin_left = 571.552
-margin_top = 50.9926
-margin_right = 612.552
-margin_bottom = 70.9926
-disabled = true
-text = "load"
-
 [node name="Label" type="Label" parent="."]
 margin_left = 307.009
 margin_top = 88.699
 margin_right = 856.009
 margin_bottom = 199.699
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.0470588, 0.235294, 0.505882, 1 )
 text = "SAVE GAME"
 
