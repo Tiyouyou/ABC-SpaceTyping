@@ -30,7 +30,7 @@ var player_name=""
 var best_score
 var best_score_temp=0
 var end_animation=0
-const SAVE_PATH_BEST_SCORE="res://best_score.json"
+const SAVE_PATH_BEST_SCORE="res://savegame/best_score.json"
 func _ready():
 	$playgame.get_tree().paused=false
 	$levels_controler/new_game_instruction.show()

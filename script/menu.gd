@@ -17,11 +17,10 @@
 #menu Script
 extends Node2D
 #savegame_files_path
-const SAVE_PATH="res://save.json"
-const SAVE_PATH2="res://save2.json"
-const SAVE_PATH3="res://save3.json"
-const SAVE_PATH_BEST_SCORE="res://best_score.json"
-var vn=1
+const SAVE_PATH="res://savegame/save.json"
+const SAVE_PATH2="res://savegame/save2.json"
+const SAVE_PATH3="res://savegame/save3.json"
+const SAVE_PATH_BEST_SCORE="res://savegame/best_score.json"
 func _ready():
 	#verification file to active load button
 	var save_file= File.new()

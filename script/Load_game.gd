@@ -15,9 +15,9 @@
 
 #Autor: Michel Pierre
 extends Node2D
-const SAVE_PATH="res://save_game/save.json"
-const SAVE_PATH2="res://save_game/save2.json"
-const SAVE_PATH3="res://save_game/save3.json"
+const SAVE_PATH="res://savegame/save.json"
+const SAVE_PATH2="res://savegame/save2.json"
+const SAVE_PATH3="res://savegame/save3.json"
 var chekload1=preload("res://scene/Main.tscn").instance()
 func _ready():
 	

@@ -41,10 +41,11 @@ __meta__ = {
 
 [node name="lazer_son" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -15.0
+volume_db = -25.0
 
 [node name="theme_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.129412, 0.278431, 0.686275, 0.862745 )
@@ -173,14 +174,8 @@ visible = false
 [connection signal="focus_entered" from="pause_game/save" to="." method="_on_save_focus_entered"]
 [connection signal="focus_entered" from="pause_game/exit" to="." method="_on_exit_focus_entered"]
 [connection signal="focus_entered" from="save_mode/save/save_data" to="." method="_on_save_data_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save/load_data" to="." method="_on_load_data_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save/load_data" to="levels_controler" method="_on_load_data_focus_entered"]
 [connection signal="focus_entered" from="save_mode/save2/save_data2" to="." method="_on_save_data2_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save2/load_data2" to="." method="_on_load_data2_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save2/load_data2" to="levels_controler" method="_on_load_data2_focus_entered"]
 [connection signal="focus_entered" from="save_mode/save3/save_data3" to="." method="_on_save_data3_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save3/load_data3" to="." method="_on_load_data3_focus_entered"]
-[connection signal="focus_entered" from="save_mode/save3/load_data3" to="levels_controler" method="_on_load_data3_focus_entered"]
 [connection signal="focus_entered" from="save_mode/close_button" to="." method="_on_close_button_focus_entered"]
 [connection signal="animation_finished" from="best_score/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

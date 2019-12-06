@@ -113,6 +113,7 @@ margin_right = 22.6754
 margin_bottom = 88.571
 min_value = -24.0
 max_value = 24.0
+ticks_on_borders = true
 script = ExtResource( 8 )
 
 [node name="volumeb1" type="TextureButton" parent="menu_deco"]
@@ -178,6 +179,7 @@ align = 1
 
 [node name="son" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -10.0
 autoplay = true
 
 [node name="save_mode" parent="." instance=ExtResource( 12 )]

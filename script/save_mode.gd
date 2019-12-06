@@ -16,9 +16,10 @@
 #Autor: Michel Pierre
 #save mode Script 
 extends Node2D
-const SAVE_PATH="res://save.json"
-const SAVE_PATH2="res://save2.json"
-const SAVE_PATH3="res://save3.json"
+const SAVE_PATH="res://savegame/save.json"
+const SAVE_PATH2="res://savegame/save2.json"
+const SAVE_PATH3="res://savegame/save3.json"
+const SAVE_PATH_BEST_SCORE="res://savegame/best_score.json"
 func _ready():
 	# active load game if files exist
 	var save_file= File.new()
